@@ -23,6 +23,32 @@ form.onsubmit = function () {
   })
 }
 
+deleteButton.onclick = function () {
+  var button = this
+  if (button.getAttribute('data-state'))
+    return false
+  button.setAttribute('data-state', 'confirm')
+  if (!confirm('Really, delete this?')) {
+    button.removeAttribute('data-state')
+    return false
+  }
+  button.setAttribute('data-state', 'hold')
+  ajaxWave({
+    url: 'delete-contact' + location.search,
+    postdata: '',
+    callback: function (wave, request) {
+      if (request.status == 200 && wave.json) {
+        button.setAttribute('data-state', 'thanks')
+        location = './'
+      } else {
+        button.setAttribute('data-state', 'whoops')
+        alert(wave.text || wave.whoops)
+        button.removeAttribute('data-state')
+      }
+    },
+  })
+}
+
 function formData(form) {
   var data = ''
   for (var i = 0; i < form.elements.length; i++) {
