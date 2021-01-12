@@ -28,7 +28,7 @@ html, body, #outer { height: 100%; }
 footer { text-align: center; }
 @media ( max-width: 28em ) { footer a { margin: 0 .4em; } }
 
-.dwidth { margin: 0 auto; width: 64em; min-width: 70%; max-width: 94%; }
+.the-width { margin: 0 auto; width: 64em; min-width: 70%; max-width: 94%; }
 
 
 header:not(#bigHead) {
@@ -108,27 +108,11 @@ button[disabled] { color: #666; background: #ccc; border-color: #ddd #bbb #bbb #
 
 h2 .material-icons { float: left; margin-top: .1em; margin-right: .5em; font-size: 1em; top: 0; }
 
-.paper { width: 7in; font-size: 11pt; }
-.paper>:first-child { margin-top: 0; }
-
-p.i { text-indent: 2em; margin: 0; min-height: 1em; }
-p.i>* { text-indent: 0 }
-
-@media screen {
-	.paper { border: solid 1px black; min-height: 9.5in; padding: .75in; }
-}
-
-@media screen and ( max-width: 910px ) { .paper { padding: 3%; max-width: 98%; }}
-@media screen and ( max-width: 770px ) { .paper { margin-left: -3%; }}
-
-@media ( min-width: 1000px ) { iframe.video { width: 900px; height: 506.25px; max-width: 100%; } }
-
-
-.half { float: left; margin-right: 1.4em;  }
-
-
-.prods { float: left; max-width: 60em;  }
-.prod { float: left; width: 30em; text-align: justify; padding-right: 1.5em; padding-top: .5em; padding-bottom: 2.5em; }
-.prod>img, .prod .img { width: 12em; float: left; margin-right: .5em; }
-.prod img { width: 12em; border-radius: 5px; box-shadow: 0 0 1px hsl(208, 100%, 37%); }
-
+table.fancy { width: 100%; }
+table.fancy { border-collapse: collapse; border-radius: 20px; overflow: hidden; }
+table.fancy>thead { background: #FED8b1; }
+table.fancy>tbody>tr { transition: background 300ms; }
+table.fancy>tbody>tr:hover { transition: background 100ms; background: #cdf; }
+table.fancy>*>tr>td { border-top: solid 1px #ccc; }
+table.fancy>*>tr>th { font-weight: 500; text-align: inherit; }
+table.fancy>*>tr>* { padding: .3em .3em; }
